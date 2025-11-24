@@ -1,0 +1,157 @@
+/* พื้นที่ดาวตก */
+#shooting-stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* ดาวแต่ละดวง (แยกออกจากบล็อกของ #shooting-stars) */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.9;
+  box-shadow: 0 0 8px rgba(255,255,255,0.9);
+  animation: fall var(--fall-duration, 2.5s) linear forwards, twinkle var(--twinkle-duration, 1.6s) ease-in-out var(--twinkle-delay, 0s) infinite;
+}
+
+/* Layer sizes */
+.star.back { width: 3px; height: 3px; opacity: 0.5; filter: blur(0.6px); box-shadow: 0 0 6px rgba(200,220,255,0.6);} 
+.star.mid  { width: 5px; height: 5px; opacity: 0.75; filter: blur(0.3px); box-shadow: 0 0 8px rgba(220,240,255,0.8);} 
+.star.front{ width: 8px; height: 8px; opacity: 1; box-shadow: 0 0 12px rgba(255,255,255,1);} 
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  /* ให้ดาวค่อย ๆ จางหายก่อนถึงด้านล่าง (ประมาณ 60% ของระยะตก) */
+  60% {
+    transform: translateY(60vh) translateX(var(--drift, 0px)) rotate(-6deg);
+    opacity: 0;
+  }
+  100% {
+    /* ยังคงไปต่อด้านล่างแต่โปร่งใสอยู่ */
+    transform: translateY(120vh) translateX(var(--drift, 0px)) rotate(-8deg);
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; box-shadow: 0 0 4px rgba(255,255,255,0.2); }
+  50% { opacity: 1;   box-shadow: 0 0 18px rgba(255,255,255,1); }
+  100% { opacity: 0.2; box-shadow: 0 0 4px rgba(255,255,255,0.2); }
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg,rgb(1, 16, 32) 0%, #2b4766 40%, #6b8298 60%, #87a1b7 80% );
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+@keyframes fall {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(400px, 700px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* ปุ่มเลือกเพลง */
+.nav-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.song-btn {
+  padding: 12px 18px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffb6c1;
+  transition: 0.25s;
+}
+
+.song-btn:hover {
+  transform: scale(1.1);
+  background-color: #ff8fab;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #444;
+  }
+  .btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 14px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+
+.page {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.content-box {
+  margin: 0 auto;
+  padding: 25px;
+  max-width: 350px;
+  border-radius: 20px;
+  background: #ffe8f0;
+  border: 2px solid #ffb6d9;
+  box-shadow: 0 5px 15px rgba(255, 150, 190, 0.3);
+}
+
+.content-text {
+  font-size: 30px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.content-text2 {
+    font-size: 20px;
+}
+
+.nav-btns {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background: #ff9ac2;
+  color: white;
+  transition: 0.2s;
+}
+
+.nav-btn:hover {
+  transform: scale(1.05);
+  background: #ff7dae;
+}
+
