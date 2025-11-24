@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #ffe4ec;
+    box-sizing: border-box;
+  }
+  .frame {
+    display: inline-block;
+    border: 5px solid #ff69b4;
+    border-radius: 15px;
+    padding: 20px;
+    background: white;
+  }
+  img {
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    transition: all 0.3s ease;
+  }
+  .btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  .yes { background-color: #ff69b4; color: white; }
+  .no { background-color: #ccc; }
+  .love {
+    background-color: red;
+    color: white;
+    font-size: 120px !important;
+    padding: 70px 90px;
+  }
+  .message-box {
+    border: 3px dashed #ff69b4;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 20px;
+    background: #fff0f6;
+  }

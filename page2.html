@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose Song</title>
+<link rel="stylesheet" href="style-page2.css">
+</head>
+<body>
+
+    <div id="hearts-bg"></div>
+
+    <div class="nav-btn">
+        <h1> (^///^)</h1>
+        <div class="nav-btns">
+            <button class="btn1" id="btn1">1</button>
+            <button class="btn2" id="btn2">2</button>
+            <button class="btn3" id="btn3">3</button>
+            <button class="btn4" id="btn4">4</button>
+            <button class="btn5" id="btn5">5</button>
+        </div>
+    </div>
+    <div></div>
+
+<script src="app2.js"></script>
+<script>
+setInterval(createHeart, 800);
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'floating-heart';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (2 + Math.random() * 4) + 's';
+    document.getElementById('hearts-bg').appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+</script>
+</body>
+</html>

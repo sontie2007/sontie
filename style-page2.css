@@ -1,0 +1,125 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#hearts-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -40px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  z-index: -1;
+  animation: floatHeart linear;
+}
+.floating-heart::before, .floating-heart::after {
+  
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 46px;
+  background: white;
+  border-radius: 16px 16px  4px 4px;
+  top: 8px;
+  left: 8px;
+}
+.floating-heart::before {
+  transform: rotate(-45deg);
+  left: 0;
+}
+.floating-heart::after {
+  transform: rotate(45deg);
+  left: 16px;
+}
+
+@keyframes floatHeart {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0) scale(1);
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-90vh) scale(1.2);
+  }
+}
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #ffe4ec;
+    box-sizing: border-box;
+
+  }
+  .btn1 {
+    font-size: 100px;
+    padding: 30px 40px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    background-color: #ff69b4; color: white
+  }
+  .btn2 {
+    font-size: 100px;
+    padding: 30px 40px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    background-color: #ff69b4; color: white
+  }
+  .btn3 {
+    font-size: 100px;
+    padding: 30px 40px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    background-color: #ff69b4; color: white
+  }
+  .btn4 {
+    font-size: 100px;
+    padding: 30px 40px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    background-color: #ff69b4; color: white
+  }
+  .btn5 {
+    font-size: 100px;
+    padding: 30px 40px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    background-color: #ff69b4; color: white
+  }
+  h1{
+    font-size: 40px;
+    padding: 20px 40px;
+    background-color: #ff3961; color: #fefefe;
+
+  }
