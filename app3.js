@@ -52,3 +52,19 @@ function createLayerStar(layer) {
 setInterval(() => createLayerStar('back'), 1100);
 setInterval(() => createLayerStar('mid'), 700);
 setInterval(() => createLayerStar('front'), 420);
+
+// Reveal hidden paragraph with small pop animation
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('revealBtn');
+  const hidden = document.querySelector('.content-text3');
+  if (!btn || !hidden) return;
+  hidden.classList.remove('show');
+  btn.addEventListener('click', () => {
+    const isShown = hidden.classList.toggle('show');
+    btn.setAttribute('aria-expanded', isShown);
+    if (isShown) {
+      // scroll the revealed text into view slightly
+      setTimeout(() => hidden.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
+    }
+  });
+});
