@@ -15,7 +15,7 @@ const songName = document.getElementById("songName");
 if (songs[id]) {
     songName.textContent = songs[id].name;
     audio.src = songs[id].file;
-    audio.volume = 0.24;
+    audio.volume = 0.6;
     audio.loop = true;
     audio.play().catch(() => {
         document.body.addEventListener('click', () => audio.play(), { once: true });
@@ -68,4 +68,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
 
